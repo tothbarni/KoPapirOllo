@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author tothb
+ * @author tothbarni
  */
 public class KoPapirOllo {
 
@@ -21,10 +21,16 @@ public class KoPapirOllo {
         System.out.print("Te választásod: ");
         String felhValasz = sc.nextLine().toLowerCase();
         
+        while (!(felhValasz.equals("kő") || felhValasz.equals("papír") || felhValasz.equals("olló"))){
+            System.out.println("Hiba! Csak 'kő', 'papír' vagy 'olló' lehet!");
+            System.out.print("Te választásod: ");
+            felhValasz = sc.nextLine().toLowerCase();
+        }
+        
         int gepRandom = random.nextInt(3);
         String gepValaszt = opciok[gepRandom];
         System.out.println("Gép választása: " + gepValaszt);
-        
+       
         if (felhValasz.equals(gepValaszt)) {
             System.out.println("Döntetlen!");
         } else if (
@@ -33,14 +39,8 @@ public class KoPapirOllo {
             (felhValasz.equals("olló") && gepValaszt.equals("papír"))
         ) {
             System.out.println("Nyertél!");
-        } else if (
-            felhValasz.equals("kő") ||
-            felhValasz.equals("papír") ||
-            felhValasz.equals("olló")
-        ) {
+        } else{
             System.out.println("Vesztettél!");
-        } else {
-            System.out.println("Hiba! Csak 'kő', 'papír' vagy 'olló' lehet!");
         }
     }
     
