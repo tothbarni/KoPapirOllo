@@ -27,6 +27,20 @@ public class KoPapirOllo {
         
         if (felhValasz.equals(gepValaszt)) {
             System.out.println("Döntetlen!");
+        } else if (
+            (felhValasz.equals("kő") && gepValaszt.equals("olló")) ||
+            (felhValasz.equals("papír") && gepValaszt.equals("kő")) ||
+            (felhValasz.equals("olló") && gepValaszt.equals("papír"))
+        ) {
+            System.out.println("Nyertél!");
+        } else if (
+            felhValasz.equals("kő") ||
+            felhValasz.equals("papír") ||
+            felhValasz.equals("olló")
+        ) {
+            System.out.println("Vesztettél!");
+        } else {
+            System.out.println("Hiba! Csak 'kő', 'papír' vagy 'olló' lehet!");
         }
     }
     
