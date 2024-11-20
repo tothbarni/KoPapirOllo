@@ -20,6 +20,11 @@ public class KoPapirOllo {
         
         System.out.print("Te választásod: ");
         String felhValasz = sc.nextLine().toLowerCase();
+        
+        int gepRandom = random.nextInt(1, 3);
+        String gepValaszt = opciok[gepRandom];
+        System.out.println("Gép választása: " + gepValaszt);
+ 
     }
     
 }
